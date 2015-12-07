@@ -37,6 +37,11 @@ public class DataEntry extends JFrame{
         //Add the cards to the root JPanel. Each card is a JPanel containing other components
         //The first card added is the first one shown when the GUI starts.
         //Each card needs a String label to identify it, recommended to use constants.
+
+
+        //The order that you add the cards in is important
+        //When you ask CardLayout to show the next card, it will use the order that you added them
+        //to decide what the next card is.
         rootPanel.add(question1panel, NAME_QUESTION);
         rootPanel.add(question2panel, COLOR_QUESTION);
         rootPanel.add(summaryPanel, SUMMARY);
@@ -91,6 +96,7 @@ public class DataEntry extends JFrame{
                 userFavColor = "";
                 userName = "";
 
+                //Return to the first card
                 cl.first(rootPanel);
             }
         });
